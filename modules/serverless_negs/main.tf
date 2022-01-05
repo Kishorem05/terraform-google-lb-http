@@ -157,6 +157,10 @@ resource "google_compute_url_map" "https_redirect" {
 resource "google_compute_backend_service" "default" {
   provider = google-beta
   for_each = var.backends
+  
+resource "google_compute_backend_service" "default" {
+  provider = google-beta
+  for_each = var.backends
 
   project = var.project
   name    = "${var.name}-backend-${each.key}"
